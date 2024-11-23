@@ -121,7 +121,7 @@ SafeSim/
    
 
 2. Run the tool:
-3. 
+
    ```python safe_sim.py```
 
 4. View logs:
