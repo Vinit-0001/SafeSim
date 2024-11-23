@@ -1,112 +1,158 @@
 **SafeSim: Malware Behavior Simulation Tool**
 
-SafeSim is a Python-based tool designed to simulate various malware behaviors in a controlled and safe environment. It is built for cybersecurity professionals, researchers, and students to analyze and understand how different malware operates without risking actual systems or data.
+**Overview:**
+SafeSim is a secure, sandboxed tool for simulating various types of malware behaviors in a controlled environment. It is designed for cybersecurity professionals, ethical hackers, and educators to better understand malware tactics, techniques, and procedures (TTPs). This tool operates entirely within isolated environments to ensure safety and prevent any unintended risks to real-world systems.
 
-This tool provides a hands-on approach to studying malware tactics, techniques, and procedures (TTPs), enhancing training and improving incident response strategies.
+---
 
+**Features:**
 
-**Features**
+SafeSim includes simulations for the following malware behaviors:
 
-File Operations: Simulates malicious file creation, modification, and deletion.
+1. File Operations
+   - Simulates file creation, modification, and deletion.
+2. Registry Operations (Windows-only)
+   - Creates registry keys and writes values to simulate registry manipulations.
+3. Network Traffic
+   - Performs HTTP GET requests to simulate network-based activities.
+4. Ransomware Behavior
+   - Encrypts files in a specified directory and logs a simulated ransom message.
+5. Credential Harvesting
+   - Simulates the collection of fake credentials from common websites.
+6. Data Exfiltration
+   - Sends simulated sensitive data to a configured remote endpoint.
+7. Persistence Mechanism (Windows-only)
+   - Creates a registry entry to simulate adding persistence for malware.
+8. Remote Access Trojan (RAT)
+   - Simulates a RAT session by establishing a remote connection and executing commands. (Disabled by default for safety.)
+9. Screenshot Capture
+   - Simulates capturing a screenshot of the host machine and saving it locally.
+10. Keylogger Behavior (Upcoming)
+    - Logs simulated keystrokes (placeholder implementation for future enhancements).
 
-Registry Manipulation: Mimics changes to the Windows registry (Windows only).
-
-Network Traffic: Simulates HTTP requests and DNS queries.
-
-Process Creation and Termination: Emulates malware-like process behaviors.
-
-Memory-Resident Malware: Demonstrates fileless malware techniques.
-
-Keylogging: Captures simulated keystrokes to mimic keylogger behavior.
-
-Lateral Movement: Simulates remote command execution over SSH.
-
-Phishing Simulation: Logs a simulated phishing email with malicious links.
-
-
-**How It Works**
-
-SafeSim operates by executing simulated malware behaviors based on a customizable configuration file (config.json). Each action is logged for detailed analysis, allowing users to study how malware operates and test the response of security systems.
-
-**Installation**
-
-**Prerequisites**
-
-Python 3.8 or higher
-
-Recommended: Use a virtual environment for installation
-
-**Steps**
-
-**Clone the repository:**
-
-git clone https://github.com/username/SafeSim.git
-cd SafeSim
+---
 
 
-**Install dependencies:**
+**Repository Structure:**
 
-pip install -r requirements.txt
-Configure the tool by editing the config.json file (optional).
+SafeSim/
 
-**Run the tool:**
+├── safe_sim.py           # Main script for running malware simulations
 
-python safe_sim.py
+├── config.json           # Configuration file to customize simulation options
 
+├── requirements.txt      # Python dependencies
 
-**Configuration**
+├── utils.py              # Helper functions (e.g., logging)
 
-The behavior of the tool is controlled via the config.json file. Each module (e.g., file operations, network traffic) can be enabled or disabled. Below is an example configuration:
+├── logs.txt              # Log file (generated during execution)
 
-json
-Copy code
-{
-  "simulate_file_operations": true,
-  "simulate_registry_operations": true,
-  "simulate_network_traffic": true,
-  "simulate_process_creation": true,
-  "simulate_memory_resident": true,
-  "simulate_keylogging": false,
-  "simulate_lateral_movement": false,
-  "simulate_phishing": true
-}
-You can also customize the parameters for each simulation, such as file paths, URLs, and registry keys.
+├── LICENSE               # Licensing information
+
+└── README.md             # Documentation (this file)
 
 
-**Logging**
+---
 
-All activities performed by the tool are logged in logs.txt with timestamps. The logs provide details of every simulated behavior, making it easy to analyze the output.
+**Prerequisites:**
+- Python 3.7 or higher
+- A sandboxed or virtual environment for safe execution.
 
-**Example log entry:**
+---
 
-[2024-11-23 14:15:30] Created file: temp_simulation/malware_test.txt
+**Installation:**
+1. Clone the repository:
 
-[2024-11-23 14:15:32] HTTP GET Request to http://example.com | Status Code: 200
+```git clone https://github.com/username/SafeSim.git`
+  cd SafeSim```
 
-[2024-11-23 14:15:34] Simulated phishing email sent to victim@example.com with link: http://malicious.example.com
+2. Install dependencies:
+   
+```pip install -r requirements.txt```
+
+---
+
+**Usage:**
+1. Edit the ```config.json``` file to enable/disable specific simulations and customize their parameters:
+   
+   ```
+   {
+   
+     "simulate_file_operations": true,
+   
+     "simulate_registry_operations": true,
+   
+     "simulate_network_traffic": true,
+   
+     "network_traffic": {   
+       "url": "http://example.com"   
+     },
+   
+     "simulate_ransomware": true,
+   
+     "ransomware_simulation": {   
+       "target_directory": "ransomware_simulation"   
+     },
+   
+     "simulate_credential_harvesting": true,
+   
+     "simulate_data_exfiltration": true,
+   
+     "data_exfiltration": {   
+       "target_url": "http://example.com/exfiltrate"   
+     },
+   
+     "simulate_persistence": true,
+   
+     "simulate_rat": false,
+   
+     "rat_simulation": {
+   
+       "host": "127.0.0.1",
+   
+       "port": 4444
+   
+     },
+   
+     "simulate_screenshot_capture": true
+   
+   }
+   ```
+   
+
+2. Run the tool:
+3. 
+   ```python safe_sim.py```
+
+4. View logs:
+   All events are logged in the logs.txt file for auditing and analysis.
+
+---
+
+**Safety and Legal Disclaimer:**
+- This tool is strictly for educational and research purposes.
+- Ensure SafeSim is executed in a sandboxed or virtual environment.
+- Do not use this tool for malicious purposes; doing so is illegal and unethical.
+
+---
+
+**Customizable Malware Behaviors:**
+- Each simulation is customizable via config.json. For example:
+  - Change the target directory for ransomware simulation.
+  - Specify the remote endpoint for data exfiltration.
+  - Configure the RAT host and port.
+
+---
+
+**Limitations:**
+- Registry and persistence simulations work only on Windows systems.
+- Keylogger behavior is currently a placeholder and will be fully implemented in future updates.
 
 
 
-**Use Cases**
+---
 
-Cybersecurity Training:
-Study malware behaviors in a safe and controlled manner.
-Security Testing:
-Test the effectiveness of antivirus, firewalls, and detection tools.
-Incident Response Practice:
-Train security teams to identify and mitigate simulated malware activities.
-Legal Disclaimer
-This tool is designed strictly for educational and research purposes. It should only be used in a controlled, sandboxed environment. Any malicious or unethical use of this tool is strictly prohibited and the responsibility lies solely with the user.
-
-
-
-**Future Enhancements**
-
-Add support for additional malware behaviors (e.g., ransomware simulation, advanced persistence).
-Export logs to JSON or CSV for integration with SIEM tools.
-Create a graphical interface for easier interaction.
-
-
-**Support**
-
-If you have any questions or issues, please open an issue on the repository or contact the author at hbhavar12@gmail.com.
+**Future Enhancements:**
+- Add full keylogger functionality.
+- Improve RAT simulation with enhanced features.
+- Implement more malware TTPs, such as privilege escalation and system reconnaissance.
