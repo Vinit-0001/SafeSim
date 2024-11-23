@@ -63,7 +63,8 @@ SafeSim/
 **Installation:**
 1. Clone the repository:
 
-```git clone https://github.com/username/SafeSim.git`
+```git clone https://github.com/username/SafeSim.git
+
   cd SafeSim```
 
 2. Install dependencies:
