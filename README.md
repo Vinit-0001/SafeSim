@@ -64,7 +64,7 @@ SafeSim/
 1. Clone the repository:
 
 ```
-git clone https://github.com/username/SafeSim.git
+git clone https://github.com/unknown-02/SafeSim.git
 
 cd SafeSim
 ```
