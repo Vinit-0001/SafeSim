@@ -127,7 +127,9 @@ pip install -r requirements.txt
 
 2. Run the tool:
 
-   ```python safe_sim.py```
+   ```
+   python safe_sim.py
+   ```
 
 4. View logs:
    All events are logged in the logs.txt file for auditing and analysis.
