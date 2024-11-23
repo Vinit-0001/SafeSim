@@ -2,38 +2,23 @@
   "simulate_file_operations": true,
   "simulate_registry_operations": true,
   "simulate_network_traffic": true,
-  "simulate_process_creation": true,
-  "simulate_memory_resident": true,
-  "simulate_keylogging": true,
-  "simulate_lateral_movement": true,
-  "simulate_phishing": true,
-  
-  "file_operations": {
-    "directory": "temp_simulation",
-    "file_name": "malware_test.txt",
-    "delete_after_creation": true
+  "network_traffic": {
+    "url": "http://example.com"
   },
-  "registry_operations": {
-    "key": "SOFTWARE\\SimulatedMalware",
-    "value_name": "SimValue",
-    "value_data": "SimData"
+  "simulate_ransomware": true,
+  "ransomware_simulation": {
+    "target_directory": "ransomware_simulation"
   },
-  "network_simulation": {
-    "target_url": "http://example.com",
-    "simulate_dns_queries": true
+  "simulate_credential_harvesting": true,
+  "simulate_data_exfiltration": true,
+  "data_exfiltration": {
+    "target_url": "http://example.com/exfiltrate"
   },
-  "process_simulation": {
-    "process_name": "notepad.exe",
-    "terminate_process": true
+  "simulate_persistence": true,
+  "simulate_rat": false,
+  "rat_simulation": {
+    "host": "127.0.0.1",
+    "port": 4444
   },
-  "memory_resident": {},
-  "keylogger_simulation": {},
-  "lateral_movement": {
-    "remote_host": "192.168.1.10",
-    "command": "ls"
-  },
-  "phishing_simulation": {
-    "email": "victim@example.com",
-    "url": "http://malicious.example.com"
-  }
+  "simulate_screenshot_capture": true
 }
