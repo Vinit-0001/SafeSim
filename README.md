@@ -33,25 +33,24 @@ SafeSim operates by executing simulated malware behaviors based on a customizabl
 **Prerequisites**
 
 Python 3.8 or higher
-Recommended: Use a virtual environment for installation
-Steps
-Clone the repository:
 
-bash
-Copy code
+Recommended: Use a virtual environment for installation
+
+**Steps**
+
+**Clone the repository:**
+
 git clone https://github.com/username/SafeSim.git
 cd SafeSim
-Install dependencies:
 
-bash
-Copy code
+
+**Install dependencies:**
+
 pip install -r requirements.txt
 Configure the tool by editing the config.json file (optional).
 
-Run the tool:
+**Run the tool:**
 
-bash
-Copy code
 python safe_sim.py
 
 
