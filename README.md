@@ -80,8 +80,6 @@ All activities performed by the tool are logged in logs.txt with timestamps. The
 
 **Example log entry:**
 
-plaintext
-Copy code
 [2024-11-23 14:15:30] Created file: temp_simulation/malware_test.txt
 
 [2024-11-23 14:15:32] HTTP GET Request to http://example.com | Status Code: 200
@@ -91,6 +89,7 @@ Copy code
 
 
 **Use Cases**
+
 Cybersecurity Training:
 Study malware behaviors in a safe and controlled manner.
 Security Testing:
