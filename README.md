@@ -1,4 +1,5 @@
 #**SafeSim: Malware Behavior Simulation Tool**
+
 SafeSim is a Python-based tool designed to simulate various malware behaviors in a controlled and safe environment. It is built for cybersecurity professionals, researchers, and students to analyze and understand how different malware operates without risking actual systems or data.
 
 This tool provides a hands-on approach to studying malware tactics, techniques, and procedures (TTPs), enhancing training and improving incident response strategies.
