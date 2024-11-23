@@ -1,0 +1,39 @@
+{
+  "simulate_file_operations": true,
+  "simulate_registry_operations": true,
+  "simulate_network_traffic": true,
+  "simulate_process_creation": true,
+  "simulate_memory_resident": true,
+  "simulate_keylogging": true,
+  "simulate_lateral_movement": true,
+  "simulate_phishing": true,
+  
+  "file_operations": {
+    "directory": "temp_simulation",
+    "file_name": "malware_test.txt",
+    "delete_after_creation": true
+  },
+  "registry_operations": {
+    "key": "SOFTWARE\\SimulatedMalware",
+    "value_name": "SimValue",
+    "value_data": "SimData"
+  },
+  "network_simulation": {
+    "target_url": "http://example.com",
+    "simulate_dns_queries": true
+  },
+  "process_simulation": {
+    "process_name": "notepad.exe",
+    "terminate_process": true
+  },
+  "memory_resident": {},
+  "keylogger_simulation": {},
+  "lateral_movement": {
+    "remote_host": "192.168.1.10",
+    "command": "ls"
+  },
+  "phishing_simulation": {
+    "email": "victim@example.com",
+    "url": "http://malicious.example.com"
+  }
+}
