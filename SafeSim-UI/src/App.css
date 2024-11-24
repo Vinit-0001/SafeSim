@@ -1,0 +1,105 @@
+/* Importing Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Define CSS Variables */
+:root {
+  --primary-color: #646cff; 
+  --secondary-color: #61dafb; 
+  --text-color: #333;
+  --background-color: #f9f9f9;
+  --accent-color: #ff6b6b;
+  --transition-speed: 300ms;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; 
+  overflow-y: hidden;
+}
+
+html, body {
+  overflow: hidden; 
+  height: 100%;
+  background-color: var(--background-color); 
+  color: var(--text-color); 
+   
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;  
+  overflow: hidden;  
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter var(--transition-speed);
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em var(--primary-color));
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em var(--secondary-color));
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Mobile First Approach */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;  
+  }
+
+  .logo {
+    height: 4em;  
+  }
+
+  .card {
+    padding: 1.5em; 
+  }
+}
+
+/* Ensure no scrolling on the container */
+.min-h-screen {
+  min-height: 100vh;  
+  overflow: hidden; 
+}
