@@ -128,7 +128,7 @@ pip install -r requirements.txt
 2. Run the tool:
 
    ```
-   python safe_sim.py
+   python3 safe_sim.py
    ```
 
 4. View logs:
